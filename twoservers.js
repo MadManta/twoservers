@@ -7,9 +7,17 @@ var PORT2 = 7500;
 
 // Create a generic function to handle requests and responses
 function handleRequest(request, response) {
-    console.log(request);
+    var good = "";
+    var random = Math.floor(Math.random()*3);
+    if(random == 0) {
+        good = "You are amazing";
+    } else if (random === 1) {
+        good = "You are awesome";
+    } else {
+        good = "You are wunderbar";
+    }
   // Send the below string to the client when the user visits the PORT URL
-  response.end("It Works!! Path Hit: " + request.url);
+  response.end(good);
 }
 
 function handleRequest2(request, response) {
